@@ -5,10 +5,14 @@
   "main": "cypress.config.js",
   "devDependencies": {
     "cypress": "^12.8.1",
+    "cypress-mochawesome-reporter": "^3.3.0",
     "newman": "^5.3.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run",
+    "postman": "npx newman run Postman/Devowelizer_Casumo.json",
+    "postman_report": "npx newman run Postman/Devowelizer_Casumo.json -r htmlextra --reporter-htmlextra-export ./postman/"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +23,7 @@
     "@cypress/webpack-preprocessor": "^5.12.0",
     "babel-loader": "^9.1.2",
     "chai": "^4.3.7",
+    "newman-reporter-htmlextra": "^1.22.11",
     "webpack": "^5.76.2"
   }
 }
