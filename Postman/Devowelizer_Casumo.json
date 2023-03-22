@@ -1,0 +1,455 @@
+{
+	"info": {
+		"_postman_id": "c1381400-4106-4876-b3ce-e51939733277",
+		"name": "Devowelizer_Casumo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20829624"
+	},
+	"item": [
+		{
+			"name": "Basic string lowercase",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let resp = pm.response.text()\r",
+							"\r",
+							"console.log(resp)\r",
+							"\r",
+							"pm.test(\"verify the response\", () => {\r",
+							"    pm.expect(resp).to.eql(\":bcdfg\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/:abcdefg",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						":abcdefg"
+					],
+					"variable": [
+						{
+							"key": "abcdefg",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Basic string uppercase",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let resp = pm.response.text()\r",
+							"\r",
+							"console.log(resp)\r",
+							"\r",
+							"const error = \"Internal Server Error\"\r",
+							"if(resp == error) {\r",
+							"    postman.setNextRequest(pm.info.requestName)\r",
+							"}\r",
+							"\r",
+							"pm.test(\"verify the response\", () => {\r",
+							"    pm.expect(resp).to.eql(\":BCDFG\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/:ABCDEFG",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						":ABCDEFG"
+					],
+					"variable": [
+						{
+							"key": "ABCDEFG",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Basic int",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let resp = pm.response.text()\r",
+							"\r",
+							"console.log(resp)\r",
+							"\r",
+							"const error = \"Internal Server Error\"\r",
+							"if(resp == error) {\r",
+							"    postman.setNextRequest(pm.info.requestName)\r",
+							"}\r",
+							"\r",
+							"pm.test(\"verify the response\", () => {\r",
+							"    pm.expect(resp).to.eql(\":12345\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/:12345",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						":12345"
+					],
+					"variable": [
+						{
+							"key": "12345",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alphanumeric",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let resp = pm.response.text()\r",
+							"\r",
+							"console.log(resp)\r",
+							"\r",
+							"const error = \"Internal Server Error\"\r",
+							"if(resp == error) {\r",
+							"    postman.setNextRequest(pm.info.requestName)\r",
+							"}\r",
+							"\r",
+							"pm.test(\"verify the response\", () => {\r",
+							"    pm.expect(resp).to.eql(\":twlv12\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/:twelve12",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						":twelve12"
+					],
+					"variable": [
+						{
+							"key": "twelve12",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multi case test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let resp = pm.response.text()\r",
+							"\r",
+							"console.log(resp)\r",
+							"\r",
+							"const error = \"Internal Server Error\"\r",
+							"if(resp == error) {\r",
+							"    postman.setNextRequest(pm.info.requestName)\r",
+							"}\r",
+							"\r",
+							"pm.test(\"verify the response\", () => {\r",
+							"    pm.expect(resp).to.eql(\":TrTmnT\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/:TrEaTmEnT",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						":TrEaTmEnT"
+					],
+					"variable": [
+						{
+							"key": "TrEaTmEnT",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multiple strings",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let resp = pm.response.text()\r",
+							"\r",
+							"console.log(resp)\r",
+							"\r",
+							"const error = \"Internal Server Error\"\r",
+							"if(resp == error) {\r",
+							"    postman.setNextRequest(pm.info.requestName)\r",
+							"}\r",
+							"\r",
+							"pm.test(\"verify the response\", () => {\r",
+							"    pm.expect(resp).to.eq(\":Ths s  lngr tst\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/:This is a longer test",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						":This is a longer test"
+					],
+					"variable": [
+						{
+							"key": "This is a longer test",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "String with symbols",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let resp = pm.response.text()\r",
+							"\r",
+							"console.log(resp)\r",
+							"\r",
+							"const error = \"Internal Server Error\"\r",
+							"if(resp == error) {\r",
+							"    postman.setNextRequest(pm.info.requestName)\r",
+							"}\r",
+							"\r",
+							"pm.test(\"verify the response\", () => {\r",
+							"    pm.expect(resp).to.eql(\":Tst @ symbls!$\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/:Test @ symbols!$",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						":Test @ symbols!$"
+					],
+					"variable": [
+						{
+							"key": "Test @ symbols!$",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accidental parameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let resp = pm.response.text()\r",
+							"\r",
+							"console.log(resp)\r",
+							"\r",
+							"const error = \"Internal Server Error\"\r",
+							"if(resp == error) {\r",
+							"    postman.setNextRequest(pm.info.requestName)\r",
+							"}\r",
+							"\r",
+							"pm.test(\"verify the response\", () => {\r",
+							"    pm.expect(resp).to.eql(\":Ths s n ccdnt?!!\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/:This is an accident?!!",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						":This is an accident"
+					],
+					"query": [
+						{
+							"key": "!!",
+							"value": null
+						}
+					],
+					"variable": [
+						{
+							"key": "This is an accident",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Only vowels",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let resp = pm.response.text()\r",
+							"\r",
+							"console.log(resp)\r",
+							"\r",
+							"const error = \"Internal Server Error\"\r",
+							"if(resp == error) {\r",
+							"    postman.setNextRequest(pm.info.requestName)\r",
+							"}\r",
+							"\r",
+							"pm.test(\"verify the response\", () => {\r",
+							"    pm.expect(resp).to.eql(\":\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/:aeiou",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						":aeiou"
+					],
+					"variable": [
+						{
+							"key": "aeiou",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.variables.set(\"baseUri\", 'http://localhost:8080')"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUri",
+			"value": "",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
