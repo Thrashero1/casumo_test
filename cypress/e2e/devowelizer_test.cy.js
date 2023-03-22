@@ -1,4 +1,6 @@
 describe('Various tests for the devowelizer', () =>{
+    let alphabet = 'a b c d e f g h i j k l m n o p q r s t u v w x y z'
+    let noVowelAlphabet = ': b c d  f g h  j k l m n  p q r s t  v w x y z'
 
     it('Basic string lowercase', () => {
         cy.devowelizer('abcdefg', ':bcdfg', 200)
@@ -34,5 +36,9 @@ describe('Various tests for the devowelizer', () =>{
 
     it('Only Vowels', () => {
         cy.devowelizer('aeiou', ':', 200)
+    })
+
+    it('Alphabet test', () => {
+        cy.devowelizer(alphabet, noVowelAlphabet, 200)
     })
 })

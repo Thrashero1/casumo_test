@@ -17,6 +17,11 @@
 							"\r",
 							"console.log(resp)\r",
 							"\r",
+							"const error = \"Internal Server Error\"\r",
+							"if(resp == error) {\r",
+							"    postman.setNextRequest(pm.info.requestName)\r",
+							"}\r",
+							"\r",
 							"pm.test(\"verify the response\", () => {\r",
 							"    pm.expect(resp).to.eql(\":bcdfg\")\r",
 							"})"
@@ -414,6 +419,51 @@
 					"variable": [
 						{
 							"key": "aeiou",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Only vowels Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let resp = pm.response.text()\r",
+							"\r",
+							"console.log(resp)\r",
+							"\r",
+							"const error = \"Internal Server Error\"\r",
+							"if(resp == error) {\r",
+							"    postman.setNextRequest(pm.info.requestName)\r",
+							"}\r",
+							"\r",
+							"pm.test(\"verify the response\", () => {\r",
+							"    pm.expect(resp).to.eql(\": b c d  f g h  j k l m n  p q r s t  v w x y z\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUri}}/:a b c d e f g h i j k l m n o p q r s t u v w x y z",
+					"host": [
+						"{{baseUri}}"
+					],
+					"path": [
+						":a b c d e f g h i j k l m n o p q r s t u v w x y z"
+					],
+					"variable": [
+						{
+							"key": "a b c d e f g h i j k l m n o p q r s t u v w x y z",
 							"value": null
 						}
 					]
